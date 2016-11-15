@@ -9,7 +9,7 @@ geth account new
 // The password_file must be a simple file with password of this new account
 geth --password <password_file> account new > geth_address_output
 
-// Get clean wallet from output
+// Get clean wallet address from output
 cat geth_address_output| cut -d' ' -f2 | cut -d'{' -f2 | cut -d'}' -f1 > wallet
 
 // Update account for change password
