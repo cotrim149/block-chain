@@ -15,6 +15,7 @@ init_blockchain:
 
 seed_candidates_wallet:
 	echo 'seed candidates'
+	sh create_candidate_wallet.sh
 
 seed_voters_wallet:
 	echo 'seed voters'
