@@ -1,0 +1,18 @@
+// init geth command for mac
+geth --fast --cache 512 -ipcpath ~/Library/Ethereum/geth.ipc --networkid 1234 --datadir ./private_net --unlock 0 --rpc --rpccorsdomain="*" --rpcaddr "0.0.0.0"
+
+// Create new account
+// must introduce a new password for new account
+geth account new
+
+// Create new account with a password file and redirect response to geth_address_output file
+// The password_file must be a simple file with password of this new account
+geth --password <password_file> account new > geth_address_output
+
+// Get clean wallet from output
+cat geth_address_output| cut -d' ' -f2 | cut -d'{' -f2 | cut -d'}' -f1 > wallet
+
+// Update account for change password
+// 1 - Unlock account for new password
+// 2 - Insert new password
+geth account update <wallet_id>
