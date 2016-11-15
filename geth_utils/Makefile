@@ -19,3 +19,4 @@ seed_candidates_wallet:
 
 seed_voters_wallet:
 	echo 'seed voters'
+	sh create_voter_wallet.sh
