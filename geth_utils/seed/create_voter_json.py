@@ -11,10 +11,10 @@ for x in range(1,limit):
     walletFile = open('wallet','r')
 
     jsonString = JSONEncoder().encode({
-      "id":x,
+      "id":str(x),
       "name": "Joao da Silva " + str(x),
-      "estado": "GO",
-      "titulo": "123412341234",
+      "estado": "DF",
+      "titulo": "12345678123"+str(x),
       "zone": "12"+str(x),
       "section":"4"+str(x)+"6",
       "wallet": str.strip(walletFile.read())
