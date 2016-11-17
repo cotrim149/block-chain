@@ -5,6 +5,7 @@
   <title>Eleições</title>
     <!-- CSS -->
     <link rel='stylesheet prefetch' href='lib/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='lib/alertify_css/alertify.min.css'>
     <link rel="stylesheet" href="lib/intro.js-2.3.0/introjs.css">
     <link rel="stylesheet" href="css/style.css">
     
@@ -12,20 +13,24 @@
     <script src="lib/jquery-3.1.1.min.js"></script>
     <script src="lib/intro.js-2.3.0/intro.js"></script>
     <script type="text/javascript" src="lib/web3.min.js"></script>
+    <script type="text/javascript" src="lib/lodash.js"></script>
+    <script type="text/javascript" src="lib/alertify.min.js"></script>
+
+    <script src="js/seed_candidates.js"></script>
+    <script src="js/seed_people_voters.js"></script>
     <script type="text/javascript" src="js/login.js"></script>
 </head>
 
 <body>
-    <div class="wrapper">
-      <form class="form-signin">       
+    <br/>
+    <br/>
+    <div class="wrapper form-signin">       
         <h2 class="form-signin-heading"><center>ELEIÇÕES</center></h2>
-        <input type="text" data-step="1" data-intro="Aqui irá colocar o número da sua carteira." class="form-control" name="wallet" placeholder="WALLET" required autofocus />
-        <br/>
-        <input type="password" data-step="2" data-intro="Aqui irá colocar sua senha." class="form-control" name="password" placeholder="SENHA" required/>      
-        <a  href="options.html" class="btn btn-lg btn-primary btn-block">ENTRAR</a>   
+        <input type="text" data-step="1" data-intro="Aqui irá colocar seu titulo de eleitor." class="form-control" name="wallet" placeholder="Titulo de eleitor" id="electoral_title" required autofocus />
+        <br/>     
+        <a  class="btn btn-lg btn-primary btn-block" id="btnLogin">ENTRAR</a>   
         <a  class="btn btn-lg btn-info btn-block" href="javascript:void(0);" onclick="javascript:introJs().start();">     AJUDA
-        </a>   
-      </form>
+        </a> 
     </div>
 </body>
 </html>
