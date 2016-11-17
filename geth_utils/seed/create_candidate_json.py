@@ -6,7 +6,7 @@ myList = []
 myList.append("[")
 limit = 6
 
-for x in range(1,limit):
+for x in range(0,limit):
     call(["sh", "create_wallet.sh"])
     walletFile = open('wallet','r')
 
@@ -21,36 +21,44 @@ for x in range(1,limit):
     name = ""
     photoPath = ""
     partyID = 13
-    if x == 1:
+    if x == 0:
+        candidateNumber = str(0)
+        candidateType = 0
+        name = "Branco"
+        photoPath = ""
+    elif x == 1:
         candidateNumber = str(partyID)+str(x)+str(x)+str(x)
-        candidateType = "1"
+        candidateType = 1
         name = "PAULO GUEDES"
         photoPath = "guedes.jpg"
     elif x == 2:
         candidateNumber = str(partyID)+str(x)+str(x)
-        candidateType = "2"
+        candidateType = 2
         name = "ERIKA KOKAY"
-        photoPath = "agnelo.jpg"
+        photoPath = "erika.jpg"
     elif x == 3:
         candidateNumber = str(partyID)+str(x)
-        candidateType = "3"
+        candidateType = 3
         name = "GERALDO MAGELA"
         photoPath = "magela.jpg"
     elif x == 4:
         candidateNumber = str(partyID)
-        candidateType = "4"
+        candidateType = 4
         name = "AGNELO QUEIROZ"
         photoPath = "agnelo.jpg"
     elif x == 5:
         candidateNumber = str(partyID)
-        candidateType = "5"
+        candidateType = 5
         name = "DILMA ROUSSEFF"
         photoPath = "dilma.jpg"
 
     photo = ""
-    with open(photoPath, "rb") as f:
-        data = f.read()
-        photo = data.encode("base64")
+    if photoPath != "":
+        with open(photoPath, "rb") as f:
+            data = f.read()
+            photo = data.encode("base64")
+    else:
+        photo = ""
 
     jsonString = JSONEncoder().encode({
       "id": str(x),
