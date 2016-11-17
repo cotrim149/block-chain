@@ -20,7 +20,7 @@ for x in range(0,limit):
     candidateType = ""
     name = ""
     photoPath = ""
-    partyID = 13
+    partyID = 98
     if x == 0:
         candidateNumber = str(0)
         candidateType = 0
@@ -30,27 +30,27 @@ for x in range(0,limit):
         candidateNumber = str(partyID)+str(x)+str(x)+str(x)
         candidateType = 1
         name = "PAULO GUEDES"
-        photoPath = "guedes.jpg"
+        photoPath = "seed/images/guedes.jpg"
     elif x == 2:
         candidateNumber = str(partyID)+str(x)+str(x)
         candidateType = 2
         name = "ERIKA KOKAY"
-        photoPath = "erika.jpg"
+        photoPath = "seed/images/erika.jpg"
     elif x == 3:
         candidateNumber = str(partyID)+str(x)
         candidateType = 3
         name = "GERALDO MAGELA"
-        photoPath = "magela.jpg"
+        photoPath = "seed/images/magela.jpg"
     elif x == 4:
         candidateNumber = str(partyID)
         candidateType = 4
         name = "AGNELO QUEIROZ"
-        photoPath = "agnelo.jpg"
+        photoPath = "seed/images/agnelo.jpg"
     elif x == 5:
         candidateNumber = str(partyID)
         candidateType = 5
         name = "DILMA ROUSSEFF"
-        photoPath = "dilma.jpg"
+        photoPath = "seed/images/dilma.jpg"
 
     photo = ""
     if photoPath != "":
@@ -68,7 +68,7 @@ for x in range(0,limit):
       "partido": "PT",
       "estado": candidateState,
       "wallet": str.strip(walletFile.read()),
-      "photo": str(photo)
+      "photo": "data:image/jpeg;base64,"+str(photo)
     })
     myList.append(jsonString)
     if x != limit-1:
