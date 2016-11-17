@@ -13,10 +13,12 @@ init_blockchain:
 	echo 'init blockchain with miner'
 	geth --fast --cache 512 -ipcpath $(IPC_PATH) --networkid 1234 --datadir ./private_net --unlock 0 --rpc --rpccorsdomain="*" --rpcaddr "0.0.0.0" --mine --minerthreads=1 --password std_passw
 
+create_wallet:
+	echo "create wallet"
+	sh create_wallet.sh
+
 seed_candidates_wallet:
 	echo 'seed candidates'
-	sh create_candidate_wallet.sh
 
 seed_voters_wallet:
 	echo 'seed voters'
-	sh create_voter_wallet.sh
