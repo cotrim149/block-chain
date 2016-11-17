@@ -7,7 +7,7 @@ myList.append("[")
 limit = 4
 
 for x in range(1,limit):
-    call(["sh", "create_wallet.sh"])
+    call(["sh", "seed/create_wallet.sh"])
     walletFile = open('wallet','r')
 
     jsonString = JSONEncoder().encode({

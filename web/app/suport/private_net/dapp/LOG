@@ -44,3 +44,12 @@
 19:04:15.027839 db@open done T·3.582737ms
 19:07:13.773887 db@close closing
 19:07:13.774114 db@close done T·224.87µs
+=============== Nov 17, 2016 (BRST) ===============
+19:21:27.821611 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+19:21:27.822360 version@stat F·[] S·0B[] Sc·[]
+19:21:27.822374 db@open opening
+19:21:27.822423 journal@recovery F·1
+19:21:27.823866 journal@recovery recovering @8
+19:21:27.824931 version@stat F·[] S·0B[] Sc·[]
+19:21:27.825573 db@janitor F·2 G·0
+19:21:27.825589 db@open done T·3.210145ms

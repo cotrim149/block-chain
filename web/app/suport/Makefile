@@ -18,8 +18,8 @@ init_blockchain:
 
 seed_candidates_wallet:
 	echo 'seed candidates'
-	python create_candidate_json.py
+	python seed/create_candidate_json.py
 
 seed_voters_wallet:
 	echo 'seed voters'
-	python create_voter_json.py
+	python seed/create_voter_json.py

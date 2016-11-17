@@ -2,3 +2,7 @@ chaindata/
 dapp/
 keystore/
 nodes/
+
+voters.json
+candidates.json
+wallet

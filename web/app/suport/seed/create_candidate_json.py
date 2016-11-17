@@ -7,7 +7,7 @@ myList.append("[")
 limit = 6
 
 for x in range(0,limit):
-    call(["sh", "create_wallet.sh"])
+    call(["sh", "seed/create_wallet.sh"])
     walletFile = open('wallet','r')
 
     candidateState = "DF"
