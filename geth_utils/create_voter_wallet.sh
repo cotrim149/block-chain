@@ -1,1 +1,0 @@
-sh create_candidate_wallet.sh

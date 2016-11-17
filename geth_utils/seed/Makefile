@@ -1,7 +1,7 @@
 
 UNAME_S = $(shell uname -s)
 ifeq ($(UNAME_S),Linux)
-	IPC_PATH = ~/Library/Ethereum/geth.ipc
+	IPC_PATH = ~/.ethereum/geth.ipc
 endif
 ifeq ($(UNAME_S),Darwin)
 	IPC_PATH = ~/Library/Ethereum/geth.ipc
@@ -15,8 +15,8 @@ init_blockchain:
 
 seed_candidates_wallet:
 	echo 'seed candidates'
-	sh create_candidate_wallet.sh
+	python create_candidate_json.py
 
 seed_voters_wallet:
 	echo 'seed voters'
-	sh create_voter_wallet.sh
+	python create_voter_json.py
