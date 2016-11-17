@@ -18,32 +18,49 @@ for x in range(1,limit):
 
     candidateNumber = ""
     candidateType = ""
-    partyID = 15
+    name = ""
+    photoPath = ""
+    partyID = 13
     if x == 1:
         candidateNumber = str(partyID)+str(x)+str(x)+str(x)
         candidateType = "1"
+        name = "PAULO GUEDES"
+        photoPath = "guedes.jpg"
     elif x == 2:
         candidateNumber = str(partyID)+str(x)+str(x)
         candidateType = "2"
+        name = "ERIKA KOKAY"
+        photoPath = "agnelo.jpg"
     elif x == 3:
         candidateNumber = str(partyID)+str(x)
         candidateType = "3"
+        name = "GERALDO MAGELA"
+        photoPath = "magela.jpg"
     elif x == 4:
         candidateNumber = str(partyID)
         candidateType = "4"
+        name = "AGNELO QUEIROZ"
+        photoPath = "agnelo.jpg"
     elif x == 5:
         candidateNumber = str(partyID)
         candidateType = "5"
+        name = "DILMA ROUSSEFF"
+        photoPath = "dilma.jpg"
+
+    photo = ""
+    with open(photoPath, "rb") as f:
+        data = f.read()
+        photo = data.encode("base64")
 
     jsonString = JSONEncoder().encode({
       "id": str(x),
-      "name": "Candidato " + str(x),
+      "name": name,
       "tipo": candidateType,
       "numero": candidateNumber,
       "partido": "PT",
       "estado": candidateState,
       "wallet": str.strip(walletFile.read()),
-      "photo": ""
+      "photo": str(photo)
     })
     myList.append(jsonString)
     if x != limit-1:
