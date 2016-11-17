@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Transações</title>
+    <!-- CSS -->
+    <link rel='stylesheet prefetch' href='lib/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='lib/alertify_css/alertify.min.css'>
+    <link rel="stylesheet" href="lib/intro.js-2.3.0/introjs.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- JAVASCRIPT -->
+    <script src="lib/jquery-3.1.1.min.js"></script>
+    <script src="lib/intro.js-2.3.0/intro.js"></script>
+    <script type="text/javascript" src="lib/web3.min.js"></script>
+    <script type="text/javascript" src="lib/lodash.js"></script>
+    <script type="text/javascript" src="lib/alertify.min.js"></script>
+
+    <script src="js/seed_candidates.js"></script>
+    <script src="js/seed_people_voters.js"></script>
+    <script type="text/javascript" src="js/monitor_transactions.js"></script>
+</head>
+
+<body>
+    <center>
+      <h3>Transações no BlockChain</h3>
+    </center>
+    <div  style="background: #fff;">
+      <table class="table table-hover"> 
+        <thead> 
+          <tr> 
+            <th>#</th> 
+            <th>FROM</th> 
+            <th>TO</th> 
+            <th>HASH</th> 
+          </tr> 
+        </thead> 
+        <tbody id="list_transactions"> 
+        </tbody> 
+      </table>
+    </div>
+</body>
+</html>
