@@ -22,19 +22,20 @@
 </head>
 
 <body>
-    <div class="wrapper" id="container_vote">
-      <form class="form-signin">       
+    <br/>
+    <br/>
+    <div class="wrapper form-signin" id="container_vote">             
         <h2 class="form-signin-heading"><center>Seu voto para <b class="type_candidate">Deputado estadual(a)</b></center></h2>
         <input type="text" data-step="1" data-intro="Aqui irá colocar o número do seu canditado." class="form-control" id="numberCandidate" placeholder="Número" required autofocus />
         <br/>      
-        <a id="brnVote" class="btn btn-lg btn-primary btn-block" type="submit" >OK</a>
+        <a id="brnVote" data-step="2" data-intro="Confirmar numero do candidato." class="btn btn-lg btn-success btn-block" type="submit" >CONFIRMAR</a>
+        <a class="btn btn-lg btn-block  btn-default" data-step="3" data-intro="Clique aqui para, votar em branco." id="vote_null">BRANCO</a>   
         <a  class="btn btn-lg  btn-info btn-block" href="javascript:void(0);" onclick="javascript:introJs().start();">        AJUDA
-        </a>      
-      </form>
+        </a>
     </div>
 
-    <div class="wrapper" id="container_details">
-        <form class="form-signin">       
+    <div class="wrapper form-signin hide" id="container_details">
+            
           <h2 class="form-signin-heading"><center><span class="number_candidate">Joaquim Roriz</span></center></h2>
           <div class="row" style="margin-bottom: 10px;">
               <img src="img/roriz.jpg"  class="img_candidate col-md-8 col-md-offset-2 img-responsive img-rounded">
@@ -61,8 +62,9 @@
                   </tbody>
               </table>
           </div>    
-          <a class="btn btn-lg btn-primary btn-block  btn-success" id="confirmation_vote">CONFIRMAR</a>   
-        </form>
+          <a class="btn btn-lg btn-primary btn-block  btn-success" id="confirmation_vote">CONFIRMAR</a> 
+          <a class="btn btn-lg btn-block  btn-danger" id="cancel_vote">CANCELAR</a> 
+         
       </div>
 
       <center>
@@ -72,5 +74,6 @@
         </div>
       </center>  
       
+      <audio src="mp3/votacao.mp3" id="audio_play" class="hide"></audio>
 </body>
 </html>
