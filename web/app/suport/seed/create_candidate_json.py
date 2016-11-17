@@ -22,27 +22,27 @@ for x in range(0,limit):
         candidateType = 0
         name = "Branco"
         photoPath = ""
-    elif x == 1 || x%5 == 0 :
+    elif x == 1 :
         candidateNumber = str(partyID)+str(x)+str(x)+str(x)
         candidateType = 1
         name = "PAULO GUEDES"
         photoPath = "seed/images/guedes.jpg"
-    elif x == 2 || x%5 == 1:
+    elif x == 2 :
         candidateNumber = str(partyID)+str(x)+str(x)
         candidateType = 2
         name = "ERIKA KOKAY"
         photoPath = "seed/images/erika.jpg"
-    elif x == 3 || x%5 == 2:
+    elif x == 3 :
         candidateNumber = str(partyID)+str(x)
         candidateType = 3
         name = "GERALDO MAGELA"
         photoPath = "seed/images/magela.jpg"
-    elif x == 4 || x%5 == 3:
+    elif x == 4 :
         candidateNumber = str(partyID)
         candidateType = 4
         name = "AGNELO QUEIROZ"
         photoPath = "seed/images/agnelo.jpg"
-    elif x == 5 || x%5 == 4:
+    elif x == 5 :
         candidateNumber = str(partyID)
         candidateType = 5
         name = "DILMA ROUSSEFF"
