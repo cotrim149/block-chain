@@ -15,9 +15,9 @@ $(document).ready(function() {
 			
 			if(find){
 				localStorage.setItem("login", JSON.stringify(find));
-				localStorage.setItem("order_candidates", JSON.stringify([{id:1,label:"Deputado estadual"},{id:2,label:"Deputado federal"},{id:3,label:"Senador"},{id:4,label:"Governador"},{id:5,label:"Presidente"}]));
+				localStorage.setItem("order_candidates", JSON.stringify([{id:1,label:"Deputado estadual",digits:6},{id:2,label:"Deputado federal",digits:6},{id:3,label:"Senador",digits:3},{id:4,label:"Governador",digits:2},{id:5,label:"Presidente",digits:2}]));
 
-				window.location = "vote.html"
+				window.location = "urna/index.html"
 			}else{
 				alertify.error('Eleitor não encontrado.');
 			}
