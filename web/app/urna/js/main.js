@@ -172,7 +172,7 @@ $(document).ready(function() {
 	//** Confirmar voto **///
 	function confirmVote() {
 	    confirmation_vote.click(function () {
-	    	if(input.val().length < order_candidates[0].digits){
+	    	if(input.val().length < order_candidates[0].digits || find_candidate == undefined){
 					alertify.error(order_candidates[0].label + ' não encontrado.');
 			}else{
 			console.log("Candidato: ",find_candidate);
