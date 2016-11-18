@@ -16,7 +16,7 @@ for x in range(0,limit):
     candidateType = ""
     name = ""
     photoPath = ""
-    partyID = 98
+    partyID = 94
     if x == 0:
         candidateNumber = str(0)
         candidateType = 0
@@ -61,7 +61,7 @@ for x in range(0,limit):
       "name": name,
       "tipo": candidateType,
       "numero": candidateNumber,
-      "partido": "PT",
+      "partido": "PFest",
       "estado": candidateState,
       "wallet": str.strip(walletFile.read()),
       "photo": "data:image/png;base64,"+str(photo)
