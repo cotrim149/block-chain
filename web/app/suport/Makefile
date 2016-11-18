@@ -13,8 +13,13 @@ set_data_dir:
 	geth --datadir ./private_net init private_genesis.json
 
 init_blockchain:
+	echo 'init blockchain'
+	geth --fast --cache 512 -ipcpath $(IPC_PATH) --networkid 1234 --datadir ./private_net --unlock 0 --rpc --rpccorsdomain="*" --rpcaddr "0.0.0.0" --password std_passw
+
+init_blockchain_with_miner:
 	echo 'init blockchain with miner'
 	geth --fast --cache 512 -ipcpath $(IPC_PATH) --networkid 1234 --datadir ./private_net --unlock 0 --rpc --rpccorsdomain="*" --rpcaddr "0.0.0.0" --mine --minerthreads=1 --password std_passw
+
 
 seed_candidates_wallet:
 	echo 'seed candidates'
