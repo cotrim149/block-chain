@@ -23,12 +23,12 @@ for x in range(0,limit):
         name = "Branco"
         photoPath = ""
     elif x == 1 :
-        candidateNumber = str(partyID)+str(001)
+        candidateNumber = str(partyID)+str(0)+str(0)+str(1)
         candidateType = 1
         name = "Pascoa"
         photoPath = "seed/images/pascoa.png"
     elif x == 2 :
-        candidateNumber = str(partyID)+str(02)
+        candidateNumber = str(partyID)+str(0)+str(2)
         candidateType = 2
         name = "Oktoberfest"
         photoPath = "seed/images/oktoberfest.png"
