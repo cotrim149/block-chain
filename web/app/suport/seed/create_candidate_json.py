@@ -23,30 +23,30 @@ for x in range(0,limit):
         name = "Branco"
         photoPath = ""
     elif x == 1 :
-        candidateNumber = str(partyID)+str(x)+str(x)+str(x)
+        candidateNumber = str(partyID)+str(001)
         candidateType = 1
-        name = "PAULO GUEDES"
-        photoPath = "seed/images/guedes.jpg"
+        name = "Pascoa"
+        photoPath = "seed/images/pascoa.png"
     elif x == 2 :
-        candidateNumber = str(partyID)+str(x)+str(x)
+        candidateNumber = str(partyID)+str(02)
         candidateType = 2
-        name = "ERIKA KOKAY"
-        photoPath = "seed/images/erika.jpg"
+        name = "Oktoberfest"
+        photoPath = "seed/images/oktoberfest.png"
     elif x == 3 :
-        candidateNumber = str(partyID)+str(x)
+        candidateNumber = str(partyID)+str(3)
         candidateType = 3
-        name = "GERALDO MAGELA"
-        photoPath = "seed/images/magela.jpg"
+        name = "Folia de Reis"
+        photoPath = "seed/images/folia_reis.png"
     elif x == 4 :
         candidateNumber = str(partyID)
         candidateType = 4
-        name = "AGNELO QUEIROZ"
-        photoPath = "seed/images/agnelo.jpg"
+        name = "Boi-Bumba"
+        photoPath = "seed/images/bumba.png"
     elif x == 5 :
         candidateNumber = str(partyID)
         candidateType = 5
-        name = "DILMA ROUSSEFF"
-        photoPath = "seed/images/dilma.jpg"
+        name = "Festa Junina"
+        photoPath = "seed/images/festa_junina.png"
 
     photo = ""
     if photoPath != "":
@@ -64,7 +64,7 @@ for x in range(0,limit):
       "partido": "PT",
       "estado": candidateState,
       "wallet": str.strip(walletFile.read()),
-      "photo": "data:image/jpeg;base64,"+str(photo)
+      "photo": "data:image/png;base64,"+str(photo)
     })
     myList.append(jsonString)
     if x != limit-1:
