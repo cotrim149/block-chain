@@ -9,6 +9,7 @@ contract validateVote {
     /* Cria array com os politc_types */
     // mapping (string => bool) internal votes_per_types;
     mapping (address => uint256) internal politic_to_types;
+    mapping (address => uint256) public count_votes_per_candidates;
 
     struct Vote {
         address politic;
@@ -35,6 +36,8 @@ contract validateVote {
         v.politic = _to;
         v.value = 1;
         votes_count++;
+
+        count_votes_per_candidates[_to]++;
 
         return voteID;
     }

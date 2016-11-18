@@ -1,0 +1,116 @@
+<!doctype html>
+<html class="no-js" lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Urna</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/urna-main.css">
+		<link rel="stylesheet" href="css/urna-style.css">
+		<script src="lib/modernizr-2.8.3.min.js"></script>
+
+		<!-- CSS -->
+	    <link rel='stylesheet prefetch' href='lib/alertify_css/alertify.min.css'>
+	    <link rel="stylesheet" href="lib/intro.js-2.3.0/introjs.css">
+ 
+	</head>
+	<body>
+		<div class="wrapper-external">
+			<div class="wrapper">
+				<div class="screen hide" id="end_vote">
+					<center>
+						  <h1 class="titleend">FIM</h1>
+						  <span data-timer></span>
+					</center>
+				</div>
+
+				<div class="screen" id="local_control">
+					<div class="upper-screen">
+						<div class="left-content">
+							<div class="your-vote">Seu voto para</div>
+							<div class="vote-category" data-posicao><b data-cargo></b></div>
+
+							<div class="vote-number vote-field">
+								<label>Número:</label>
+								<input maxlength="6" type="text" id="vote-input">
+							</div>
+							<div class="vote-field">
+								<label>Nome:</label>
+								<div class="value" data-name></div>
+							</div>
+							<div class="vote-field">
+								<label>Partido:</label>
+								<div class="value" data-party></div>
+							</div>
+						</div>
+						<div class="right-content">
+							<img data-image src="img/user.png" alt="">
+						</div>
+					</div>
+					<div class="bottom-screen">
+						<div>Aperte a Tecla:</div>
+						<div>VERDE para CONFIRMAR</div>
+						<div>LARANJA para CORRIGIR</div>
+					</div>
+				</div>
+				<div class="keyboard">
+					<div class="numPad">
+						<div class="num stdBtn" data-num="1">
+							<div>1</div>
+						</div>
+						<div class="num stdBtn" data-num="2">
+							<div>2</div>
+						</div>
+						<div class="num stdBtn" data-num="3">
+							<div>3</div>
+						</div>
+						<div class="num stdBtn" data-num="4">
+							<div>4</div>
+						</div>
+						<div class="num stdBtn" data-num="5">
+							<div>5</div>
+						</div>
+						<div class="num stdBtn" data-num="6">
+							<div>6</div>
+						</div>
+						<div class="num stdBtn" data-num="7">
+							<div>7</div>
+						</div>
+						<div class="num stdBtn" data-num="8">
+							<div>8</div>
+						</div>
+						<div class="num stdBtn" data-num="9">
+							<div>9</div>
+						</div>
+						<div class="num stdBtn" data-num="0">
+							<div>0</div>
+						</div>
+					</div>
+					<div class="actions">
+						<div class="button stdBtn" id="vote_null"><b>branco</b></div>
+						<div class="button stdBtn" id="cancel_vote"><b>corrige</b></div>
+						<div class="button stdBtn" id="confirmation_vote"><b>confirma</b></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<audio src="mp3/votacao.mp3" id="audio_play" class="hide"></audio>
+		
+	    
+	    <!-- JAVASCRIPT -->
+	    <script src="lib/jquery-3.1.1.min.js"></script>
+	    <script src="lib/intro.js-2.3.0/intro.js"></script>
+	    <script type="text/javascript" src="lib/web3.min.js"></script>
+	    <script type="text/javascript" src="lib/lodash.js"></script>
+	    <script type="text/javascript" src="lib/alertify.min.js"></script>
+	    <script src="js/session-controller.js"></script>
+
+	    <script src="seed/candidates.js"></script>
+	    <script src="seed/voters.js"></script>
+	    <script src="seed/contracts.js"></script>
+		<script src="js/urna.js"></script>
+	</body>
+</html>
