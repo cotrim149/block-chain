@@ -22,10 +22,15 @@ body, html{
 }
 .titleend{
   font-size: 200px;
+   margin-bottom: 0;
 }
 
 .hide{
   display: none;
+}
+
+#end_vote span{
+	display: block;
 }
 
 .show{

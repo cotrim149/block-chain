@@ -10,7 +10,7 @@ var people_voters = [{
   "name": "Joao da Silva 2",
   "zone": "122",
   "section": "426",
-  "wallet": "0xe9b7b62d7d3fffa90943543b091557183b87d3d2",
+  "wallet": "0x68cffc7b26e133f2bf62a023398d2e0226bbb078",
   "titulo_eleitoral": "123412341233",
   "estado": "DF",
   "id": 2

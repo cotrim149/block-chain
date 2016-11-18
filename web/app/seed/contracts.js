@@ -15,6 +15,19 @@ var abiVotaCoin = [{
   "payable": false,
   "type": "function"
 }, {
+  "constant": false,
+  "inputs": [{
+    "name": "_from",
+    "type": "address"
+  }],
+  "name": "voterAlreadyVote",
+  "outputs": [{
+    "name": "",
+    "type": "bool"
+  }],
+  "payable": false,
+  "type": "function"
+}, {
   "constant": true,
   "inputs": [{
     "name": "",
@@ -48,6 +61,19 @@ var abiVotaCoin = [{
   "payable": false,
   "type": "function"
 }, {
+  "constant": true,
+  "inputs": [{
+    "name": "",
+    "type": "address"
+  }],
+  "name": "voter_has_voted",
+  "outputs": [{
+    "name": "",
+    "type": "uint256"
+  }],
+  "payable": false,
+  "type": "function"
+}, {
   "constant": false,
   "inputs": [{
     "name": "_wallet",
@@ -67,5 +93,5 @@ var abiVotaCoin = [{
   "inputs": [],
   "type": "constructor"
 }];
-var votaCoinAddress = '0x87dfa87d0b8296294529f4f7b6838e23b385659e';
-var votaCoinGas = 352 + 335400;
+var votaCoinAddress = '0x4239f245557c421fbb357d7b161fbf00292a8bb4';
+var votaCoinGas = 433 + 421400;

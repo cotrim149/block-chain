@@ -10,6 +10,7 @@ contract validateVote {
     // mapping (string => bool) internal votes_per_types;
     mapping (address => uint256) internal politic_to_types;
     mapping (address => uint256) public count_votes_per_candidates;
+    mapping (address => uint256) public voter_has_voted;
 
     struct Vote {
         address politic;
@@ -27,6 +28,7 @@ contract validateVote {
     uint public votes_count;
 
     function voteTo(address _from, address _to) returns (uint) {
+        if( voterAlreadyVote(_from) == true ) throw;
         if( isPoliticalWallet(_to) == false ) throw;
         if( votingValid(_from, _to) == false ) throw;
 
@@ -38,6 +40,7 @@ contract validateVote {
         votes_count++;
 
         count_votes_per_candidates[_to]++;
+        voter_has_voted[_from]++;
 
         return voteID;
     }
@@ -73,6 +76,17 @@ contract validateVote {
         for (uint i=0; i < votes.length; i++){
             if (politic_to_types[votes[i].politic] == politic_to_types[_to]){
                 response = false;
+            }
+        }
+
+        return response;
+    }
+
+    function voterAlreadyVote(address _from) public returns (bool) {
+        bool response = false;
+        for (uint i=0; i < votes.length; i++){
+            if (votes[i].voter == _from){
+                response = true;
             }
         }
 

@@ -87,17 +87,16 @@ $(document).ready(function () {
     if (input.val().length < order_candidates[0].digits || find_candidate == undefined) {
       alertify.error(order_candidates[0].label + ' não encontrado.');
     } else {
-      console.log("Candidato: ", find_candidate);
-      console.log("Eleitor: ", user_logged);
       nextCandidate();
 
-      voteTo(find_candidate);
+      voteTo(find_candidate, function () {
+        if (find_candidate.tipo != 5) {
+          goUrna();
+        } else {
+          ending();
+        }
+      });
 
-      if (find_candidate.tipo != 5) {
-        goUrna();
-      } else {
-        ending();
-      }
     }
   });
 
@@ -114,23 +113,20 @@ $(document).ready(function () {
     var type_candidate = order_candidates[0];
     var candidate = seed_candidates[0];
     vote_null.click(function () {
-      console.log("Candidato: ", candidate.wallet);
-      console.log("Tipo: ", type_candidate.id);
-      console.log("Eleitor: ", user_logged);
+      voteTo(candidate, function () {
+        if (type_candidate.id != 5) {
+          nextCandidate();
+          goUrna();
+        } else {
+          ending();
+        }
+      });
 
-      voteTo(candidate);
-
-      if (type_candidate.id != 5) {
-        nextCandidate();
-        goUrna();
-      } else {
-        ending();
-      }
     });
   }
   voteNull();
 
-  var voteTo = function (candidate) {
+  var voteTo = function (candidate, callback) {
     votaCoin.voteTo(user_logged.wallet, candidate.wallet, {
       value: 0,
       gas: votaCoinGas,
@@ -140,7 +136,7 @@ $(document).ready(function () {
 
       hashOfVotes.push(hash);
       localStorage.setItem("hashOfVotes", JSON.stringify(hashOfVotes));
-      console.log(hash);
+      callback();
     });
   };
 
@@ -169,9 +165,10 @@ $(document).ready(function () {
     var timer = 0;
     setInterval(function () {
       if (++timer >= endTime) {
+        end_vote.find('[data-timer]').text(_.min(timer, 10) + ' / ' + endTime);
         goHome();
       } else {
-        end_vote.find('[data-timer]').text(timer);
+        end_vote.find('[data-timer]').text(timer + ' / ' + endTime);
       }
     }, 1000);
 
