@@ -23,38 +23,9 @@ $(document).ready(function () {
     "payable": false,
     "type": "function"
   }, {
-    "constant": false,
-    "inputs": [{
-      "name": "_to",
-      "type": "address"
-    }],
-    "name": "isPoliticalWallet",
-    "outputs": [{
-      "name": "",
-      "type": "bool"
-    }],
-    "payable": false,
-    "type": "function"
-  }, {
-    "constant": false,
-    "inputs": [{
-      "name": "_from",
-      "type": "address"
-    }, {
-      "name": "_to",
-      "type": "address"
-    }],
-    "name": "votingValid",
-    "outputs": [{
-      "name": "",
-      "type": "bool"
-    }],
-    "payable": false,
-    "type": "function"
-  }, {
-    "constant": false,
+    "constant": true,
     "inputs": [],
-    "name": "votingSize",
+    "name": "votes_count",
     "outputs": [{
       "name": "",
       "type": "uint256"
@@ -62,9 +33,9 @@ $(document).ready(function () {
     "payable": false,
     "type": "function"
   }, {
-    "constant": false,
+    "constant": true,
     "inputs": [],
-    "name": "politicalSize",
+    "name": "politicals_count",
     "outputs": [{
       "name": "",
       "type": "uint256"
@@ -91,11 +62,13 @@ $(document).ready(function () {
     "inputs": [],
     "type": "constructor"
   }];
-  var votaCoinAddress = '0x87dfa87d0b8296294529f4f7b6838e23b385659e';
+  var votaCoinAddress = '0x99a6326f04846e82eb04d509b1d35631bf0bcc6f';
 
   // Carregando contrato
   var votaCoinContract = web3.eth.contract(abiVotaCoin);
   var votaCoin = votaCoinContract.at(votaCoinAddress);
+
+  web3.eth.defaultAccount = web3.eth.accounts[0];
 
   var user_logged = JSON.parse(localStorage.getItem("login"));
   var order_candidates = JSON.parse(localStorage.getItem("order_candidates"));
