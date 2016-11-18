@@ -74,14 +74,6 @@ $(document).ready(function () {
     img_candidate.attr("src", obj.photo);
   }
 
-  //** Proximo candidato a ser votado **//
-  function nextCandidate() {
-    _.remove(order_candidates, function (n, k) {
-      return k == 0;
-    });
-    localStorage.setItem("order_candidates", JSON.stringify(order_candidates));
-  }
-
   //** Confirmar voto **///
   confirmation_vote.click(function () {
     if (input.val().length < order_candidates[0].digits || find_candidate == undefined) {
@@ -162,10 +154,11 @@ $(document).ready(function () {
 
 
     var endTime = 10;
-    var timer = 0;
+    var timer = 1;
+    end_vote.find('[data-timer]').text('1 / ' + endTime);
     setInterval(function () {
       if (++timer >= endTime) {
-        end_vote.find('[data-timer]').text(_.min(timer, 10) + ' / ' + endTime);
+        end_vote.find('[data-timer]').text('10 / ' + endTime);
         goHome();
       } else {
         end_vote.find('[data-timer]').text(timer + ' / ' + endTime);

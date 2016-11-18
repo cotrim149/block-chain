@@ -1,11 +1,11 @@
 var order_candidates = [{
   id: 1,
   label: "Deputado estadual",
-  digits: 6
+  digits: 5
 }, {
   id: 2,
   label: "Deputado federal",
-  digits: 6
+  digits: 4
 }, {
   id: 3,
   label: "Senador",

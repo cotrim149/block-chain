@@ -1,25 +1,16 @@
 var people_voters = [{
-  "name": "Joao da Silva 1",
-  "zone": "121",
-  "section": "416",
-  "wallet": "0xe9b7b62d7d3fffa90943543b091557183b87d3d2",
-  "titulo_eleitoral": "123412341234",
+  "titulo": "123456781231",
   "estado": "DF",
-  "id": 1
+  "id": "1",
+  "wallet": "0xe1d7a660dd19d3af3b0ff6b604deb6d5690ad0dc"
 }, {
-  "name": "Joao da Silva 2",
-  "zone": "122",
-  "section": "426",
-  "wallet": "0x68cffc7b26e133f2bf62a023398d2e0226bbb078",
-  "titulo_eleitoral": "123412341233",
+  "titulo": "123456781232",
   "estado": "DF",
-  "id": 2
+  "id": "2",
+  "wallet": "0x2d2b351f7ea65ea040d6d1cce8e54446c8d4d954"
 }, {
-  "name": "Joao da Silva 3",
-  "zone": "123",
-  "section": "436",
-  "wallet": "0xe9b7b62d7d3fffa90943543b091557183b87d3d2",
-  "titulo_eleitoral": "123412341235",
+  "titulo": "123456781233",
   "estado": "DF",
-  "id": 3
+  "id": "3",
+  "wallet": "0x3655d4fd09d163b06cecdb4532321b8c4e22f8a0"
 }];

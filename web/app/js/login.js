@@ -25,17 +25,23 @@ $(document).ready(function () {
   btn_login.click(function () {
     if (electoral_title.val() != "") {
       var voter = _.find(people_voters, {
-        'titulo_eleitoral': electoral_title.val()
+        'titulo': electoral_title.val()
       });
 
       if (voter) {
         votaCoin.voter_has_voted(voter.wallet, function (err, value) {
-          if (value.toNumber() > 0) {
+          var qtd_votes = value.toNumber();
+          console.log(qtd_votes);
+          if (qtd_votes >= order_candidates.length) {
             alertify.error('Eleitor já votou.');
           } else {
             localStorage.setItem("hashOfVotes", '');
             localStorage.setItem("login", JSON.stringify(voter));
             localStorage.setItem("order_candidates", JSON.stringify(order_candidates));
+
+            for (var i = order_candidates.length - qtd_votes; i < order_candidates.length; i++) {
+              nextCandidate();
+            }
 
             window.location = "urna.html";
           }

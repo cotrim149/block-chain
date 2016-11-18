@@ -23,7 +23,7 @@ var abiVotaCoin = [{
   "name": "voterAlreadyVote",
   "outputs": [{
     "name": "",
-    "type": "bool"
+    "type": "uint256"
   }],
   "payable": false,
   "type": "function"
@@ -93,5 +93,5 @@ var abiVotaCoin = [{
   "inputs": [],
   "type": "constructor"
 }];
-var votaCoinAddress = '0x4239f245557c421fbb357d7b161fbf00292a8bb4';
-var votaCoinGas = 433 + 421400;
+var votaCoinAddress = '0x2ba25711fa1f94998d875bf80acbc2cccdf9abbb';
+var votaCoinGas = 346 + 328600;

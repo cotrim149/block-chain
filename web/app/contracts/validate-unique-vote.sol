@@ -28,9 +28,9 @@ contract validateVote {
     uint public votes_count;
 
     function voteTo(address _from, address _to) returns (uint) {
-        if( voterAlreadyVote(_from) == true ) throw;
-        if( isPoliticalWallet(_to) == false ) throw;
-        if( votingValid(_from, _to) == false ) throw;
+        // if( voterAlreadyVote(_from) > 5 ) throw;
+        // if( isPoliticalWallet(_to) == false ) throw;
+        // if( votingValid(_from, _to) == false ) throw;
 
         uint voteID = votes.length++;
         Vote v = votes[voteID];
@@ -39,7 +39,7 @@ contract validateVote {
         v.value = 1;
         votes_count++;
 
-        count_votes_per_candidates[_to]++;
+        count_votes_per_candidates[_to] = count_votes_per_candidates[_to] + 1;
         voter_has_voted[_from]++;
 
         return voteID;
@@ -74,7 +74,7 @@ contract validateVote {
     function votingValid(address _from, address _to) internal returns (bool) {
         bool response = true;
         for (uint i=0; i < votes.length; i++){
-            if (politic_to_types[votes[i].politic] == politic_to_types[_to]){
+            if ( (votes[i].voter == _from && politic_to_types[votes[i].politic] == politic_to_types[_to]) || politic_to_types[_to] == 0 ){
                 response = false;
             }
         }
@@ -82,11 +82,11 @@ contract validateVote {
         return response;
     }
 
-    function voterAlreadyVote(address _from) public returns (bool) {
-        bool response = false;
+    function voterAlreadyVote(address _from) public returns (uint) {
+        uint response = 0;
         for (uint i=0; i < votes.length; i++){
             if (votes[i].voter == _from){
-                response = true;
+                response++;
             }
         }
 
