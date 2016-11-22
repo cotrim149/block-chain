@@ -72,6 +72,8 @@ for x in range(0,limit):
         myList.append(",")
     print jsonString
 
+myList.append(",")
+
 # Partido 2
 for x in range(1,limit):
     call(["sh", "seed/create_wallet.sh"])

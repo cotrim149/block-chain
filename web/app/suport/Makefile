@@ -14,7 +14,7 @@ set_data_dir:
 
 init_blockchain:
 	echo 'init blockchain'
-	geth --fast --cache 512 -ipcpath $(IPC_PATH) --networkid 1234 --datadir ./private_net --unlock 0 --rpc --rpccorsdomain="*" --rpcaddr "0.0.0.0" --password std_passw
+	geth --fast --cache 512 -ipcpath $(IPC_PATH) --networkid 1234 --datadir ./private_net --unlock 0 --rpc --rpccorsdomain="*" --rpcaddr "0.0.0.0" --password std_passw --port 30301 --rpcport 8101
 
 init_blockchain_with_miner:
 	echo 'init blockchain with miner'
